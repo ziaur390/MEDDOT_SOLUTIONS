@@ -1,9 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import Link from "next/link";
-import { ArrowUpRight, Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight, Menu } from "lucide-react";
 
 const links = [
   { label: "Services", href: "/#services" },
@@ -15,29 +10,28 @@ const links = [
 ];
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false);
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link href="/" aria-label="Meddot Solutions home" className="brand-logo" onClick={() => setOpen(false)}>
+        <a href="/" aria-label="Meddot Solutions home" className="brand-logo">
           <img src="/meddot-logo.png" alt="Meddot Solutions" />
-        </Link>
+        </a>
         <nav className="desktop-nav" aria-label="Main navigation">
-          <Link href="/#services">Services</Link>
-          <Link href="/how-we-work">How we work</Link>
-          <Link href="/about">About</Link>
+          <a href="/#services">Services</a>
+          <a href="/how-we-work">How we work</a>
+          <a href="/about">About</a>
         </nav>
         <div className="header-actions">
-          <Link className="button button-navy header-cta" href="/contact">Request a consultation <ArrowUpRight size={16} strokeWidth={2} /></Link>
-          <Button type="button" variant="ghost" size="icon" className="menu-button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(!open)}>
-            {open ? <X size={23} /> : <Menu size={23} />}
-          </Button>
+          <a className="button button-navy header-cta" href="/contact">Request a consultation <ArrowUpRight size={16} strokeWidth={2} /></a>
+          <details className="mobile-menu">
+            <summary aria-label="Open menu"><Menu size={23} /></summary>
+            <nav className="mobile-nav" aria-label="Mobile navigation">
+              {links.map((link) => <a key={link.href} href={link.href}>{link.label}</a>)}
+              <a className="mobile-nav-cta" href="/contact">Request a consultation <ArrowUpRight size={16} /></a>
+            </nav>
+          </details>
         </div>
       </div>
-      {open && <nav id="mobile-nav" className="mobile-nav" aria-label="Mobile navigation">
-        {links.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>)}
-        <Link className="mobile-nav-cta" href="/contact" onClick={() => setOpen(false)}>Request a consultation <ArrowUpRight size={16} /></Link>
-      </nav>}
     </header>
   );
 }

@@ -71,7 +71,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .pillar-card p{font-size:16px;line-height:1.6;color:#657284;margin:0}
 .pillar-card>a{display:inline-flex;gap:10px;align-items:center;font-size:13px;font-weight:800}
 .header-actions{display:flex;align-items:center;gap:10px}
-.menu-button{display:none!important;color:#071a42!important}
+.mobile-menu{display:none}
+.mobile-menu summary{list-style:none;cursor:pointer;display:grid;place-items:center;width:42px;height:42px}
+.mobile-menu summary::-webkit-details-marker{display:none}
 .mobile-nav{display:none}
 .button-white{background:#fff;color:#071a42}
 .button-white:hover{background:#dff4f2}
@@ -116,6 +118,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .process-panel p{color:#536479;font-size:17px;line-height:1.7;max-width:520px;margin:0}
 .process-progress{height:3px;background:#e6edef;margin-top:31px}
 .process-progress span{display:block;height:100%;background:#008f91;transition:width .3s}
+.process-steps{border:1px solid #d9e6e9;background:#fff}
+.process-step{border-bottom:1px solid #d9e6e9}
+.process-step:last-child{border-bottom:0}
+.process-step>summary{list-style:none;display:flex;align-items:center;gap:20px;cursor:pointer;padding:19px 26px;font-size:17px}
+.process-step>summary::-webkit-details-marker{display:none}
+.process-step>summary>span:first-child{color:#008f91;font-size:12px;font-weight:800}
+.process-step>summary strong{font-weight:680}
+.process-step[open]>summary{background:#071a42;color:#fff}
+.process-step[open]>summary>span:first-child{color:#6ee2df}
+.process-plus{margin-left:auto;font-size:22px;font-weight:350}
+.process-step[open] .process-plus{transform:rotate(45deg)}
+.process-step-body{padding:22px 26px 30px}
+.process-step-body h3{font-size:29px;letter-spacing:-.04em;margin:0 0 10px}
+.process-step-body p{color:#536479;font-size:16px;line-height:1.7;margin:0}
 .digital-feature{background:#f1f7f8}
 .digital-grid{display:grid;grid-template-columns:1fr 1fr;gap:11%;align-items:center}
 .digital-card{min-height:420px;padding:28px;background:#fff;box-shadow:0 22px 65px #071a420d;display:flex;flex-direction:column;justify-content:space-between}
@@ -226,8 +242,8 @@ a.service-card:hover{transform:translateY(-3px);box-shadow:0 20px 40px #071a420b
  .pillar-grid{grid-template-columns:1fr}
  .pillar-card{min-height:275px}
  .header-cta{display:none}
- .menu-button{display:inline-flex!important}
- .mobile-nav{display:flex;position:absolute;z-index:20;left:0;right:0;top:76px;background:#fff;border-top:1px solid #e1e9ec;box-shadow:0 18px 32px #071a421c;padding:15px 20px 22px;flex-direction:column}
+ .mobile-menu{display:block}
+ .mobile-menu[open] .mobile-nav{display:flex;position:absolute;z-index:20;left:0;right:0;top:76px;background:#fff;border-top:1px solid #e1e9ec;box-shadow:0 18px 32px #071a421c;padding:15px 20px 22px;flex-direction:column}
  .mobile-nav a{padding:13px 4px;border-bottom:1px solid #e5eef0;font-size:15px;font-weight:650}
  .mobile-nav .mobile-nav-cta{margin-top:10px;background:#071a42;color:#fff;padding:14px;display:flex;justify-content:space-between;border:0}
  .footer-main{grid-template-columns:1fr 1fr;padding:60px 0;gap:36px 20px}
