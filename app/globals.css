@@ -347,3 +347,30 @@ a.service-card:hover{transform:translateY(-3px);box-shadow:0 20px 40px #071a420b
 .footer-socials small{color:#aebccc;font-size:10px}
 @media(max-width:900px){.services-dropdown{width:min(790px,100%)}.services-menu-grid{gap:28px}.menu-link-list{grid-template-columns:1fr}}
 @media(max-width:640px){.trust-band-inner{grid-template-columns:1fr;gap:18px;padding-top:24px;padding-bottom:24px}.mobile-services>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:13px 4px;border-bottom:1px solid #e5eef0;font-size:15px;font-weight:650}.mobile-services-content{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;padding:7px 0 13px}.mobile-services-content a{font-size:12px;line-height:1.35;padding:9px 4px;border-bottom:0;color:#405369}.mobile-services-content a.mobile-group-title{grid-column:1/-1;margin-top:9px;padding:10px 4px 5px;border-top:1px solid #dce8ec;color:#071a42;font-size:14px;font-weight:700}.mobile-menu[open] .mobile-nav{max-height:calc(100vh - 76px);overflow-y:auto}.footer-presence{margin-top:19px}}
+
+/* Consultation request */
+.contact-hero{padding:82px 0 90px}
+.contact-hero .container>h1{max-width:850px}
+.contact-grid{grid-template-columns:minmax(0,1.4fr) minmax(290px,.6fr);gap:9%;align-items:start}
+.contact-main h2{margin:0 0 12px}
+.contact-main>p{margin:0 0 30px;max-width:610px}
+.consultation-form{display:grid;gap:22px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-field{display:grid;gap:8px}
+.form-field label{font-size:14px;font-weight:700;color:#172c4d}
+.form-field label span{color:#00787b}
+.form-field label .optional-label{font-size:12px;font-weight:500;color:#536479}
+.form-field input,.form-field select,.form-field textarea{width:100%;background:#fff;border:1px solid #b9cbd4;border-radius:5px;color:#071a42;font-size:16px;padding:13px 15px;min-height:51px}
+.form-field textarea{min-height:152px;resize:vertical;line-height:1.55}
+.form-field input::placeholder,.form-field textarea::placeholder{color:#647587;opacity:1}
+.form-field input:hover,.form-field select:hover,.form-field textarea:hover{border-color:#007f83}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:3px solid #97dfdc;outline-offset:1px;border-color:#007f83}
+.field-help{font-size:13px!important;line-height:1.55!important;color:#536479!important;margin:2px 0 0!important}
+.form-submit{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:3px}
+.form-submit>span{font-size:12px;color:#536479}
+.contact-aside{position:sticky;top:24px}
+.contact-aside-email{display:inline-block;color:#8aefea;text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere;font-weight:700;font-size:15px;margin:7px 0 28px}
+.contact-privacy{display:flex;align-items:flex-start;gap:10px;border-top:1px solid #365274;padding-top:21px;color:#c4d2df;font-size:13px;line-height:1.5}
+.contact-privacy svg{color:#70d4d0;flex:none}
+@media(max-width:800px){.contact-grid{grid-template-columns:1fr;gap:42px}.contact-aside{position:static}}
+@media(max-width:640px){.contact-hero{padding:70px 0 75px}.form-row{grid-template-columns:1fr;gap:22px}.contact-grid{gap:38px}.form-submit{align-items:flex-start;flex-direction:column;gap:8px}.form-submit .button{width:100%}}

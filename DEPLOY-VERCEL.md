@@ -5,8 +5,8 @@ This repository contains the Meddot website at its root. It is a Next.js applica
 1. Sign in at [Vercel](https://vercel.com/new) with GitHub, and authorize access to `ziaur390/MEDDOT_SOLUTIONS` if asked.
 2. Choose **Add New → Project**, import `ziaur390/MEDDOT_SOLUTIONS`, and select `main` as the production branch.
 3. Keep **Root Directory** at the repository root (`./`) and **Framework Preset** as **Next.js**. The committed `vercel.json` supplies the correct build command; leave the Output Directory at the Next.js default.
-4. Select **Deploy**. No environment variables or database are required for the current brochure site. Consultation links use a `mailto:` link to `ziaurrahman.26261@gmail.com`; there is no form backend yet.
-5. Open the assigned `*.vercel.app` URL. Check the home page, both Services menu groups, a detail page in each group, the mobile menu, images, and the email button.
+4. Select **Deploy**. No environment variables or database are required for the current brochure site. The consultation form validates details and prepares an email draft for the visitor to review and send to `ziaurrahman.26261@gmail.com`. It does not send automatically or store submissions.
+5. Open the assigned `*.vercel.app` URL. Check the home page, both Services menu groups, a detail page in each group, the mobile menu, images, and the consultation form.
 6. Before sharing the Vercel URL publicly, replace the sample New York location and pending social profiles with verified details, review every draft service scope, and decide whether your personal email should remain on the contact page. The AI services are correctly marked in development.
 7. When you own a domain, add it under **Project → Settings → Domains**. Follow the DNS records shown for that project; do not guess A or CNAME values. Choose one primary domain and redirect the other variant if you add both apex and `www`.
 
