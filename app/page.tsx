@@ -1,11 +1,10 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Native links work reliably in the current Sites runtime. */
 import Image from "next/image";
-import { ArrowUpRight, HeartPulse, Layers3, Sparkles, Check, CircleDot, Monitor, MessageSquareText } from "lucide-react";
+import { ArrowUpRight, HeartPulse, Layers3, Sparkles, Check, CircleDot, Monitor, MessageSquareText, MapPin, Mail, ClipboardCheck } from "lucide-react";
 import { ProcessTabs } from "@/components/process-tabs";
 
 const pillars = [
   {
-    number: "01",
     icon: HeartPulse,
     title: "Revenue operations",
     description: "Billing, coding, credentialing, AR recovery, audits, and clearinghouse support for independent practices.",
@@ -13,7 +12,6 @@ const pillars = [
     link: "Explore revenue services",
   },
   {
-    number: "02",
     icon: Layers3,
     title: "Digital growth",
     description: "Practice websites, search marketing, GoHighLevel, and clinical system integrations.",
@@ -21,7 +19,6 @@ const pillars = [
     link: "Explore digital services",
   },
   {
-    number: "03",
     icon: Sparkles,
     title: "Healthcare AI",
     description: "An AI receptionist and practical healthcare automation solutions are in development.",
@@ -52,13 +49,15 @@ export default function Home() {
         <div className="container hero-footer"><span>BETTER SYSTEMS. BETTER FOCUS.</span><span>SCROLL TO EXPLORE ↓</span></div>
       </section>
 
+      <section className="trust-band" aria-label="About Meddot"><div className="container trust-band-inner"><div><MapPin size={20}/><p><strong>Focused on U.S. practices</strong><span>Sample location: New York, NY · to be confirmed</span></p></div><div><ClipboardCheck size={20}/><p><strong>Scope before promises</strong><span>Clear responsibilities and systems for every engagement</span></p></div><div><Mail size={20}/><p><strong>A direct way to connect</strong><span>Start with a consultation by email</span></p></div></div></section>
+
       <section className="services-section section" id="services">
         <div className="container">
           <div className="section-intro"><div><p className="kicker">WHAT WE DO</p><h2>One partner for the work<br />behind better care.</h2></div><p>From the revenue cycle to your digital front door, we help independent practices build the support they need to grow.</p></div>
           <div className="pillar-grid">
-            {pillars.map(({ number, icon: Icon, title, description, href, link }) => (
-              <article className="pillar-card" key={number}>
-                <div className="pillar-top"><span>{number} / 03</span><Icon size={25} strokeWidth={1.6} /></div>
+            {pillars.map(({ icon: Icon, title, description, href, link }) => (
+              <article className="pillar-card" key={title}>
+                <div className="pillar-top"><Icon size={25} strokeWidth={1.6} /></div>
                 <div><h3>{title}</h3><p>{description}</p></div>
                 <a href={href}>{link} <ArrowUpRight size={17} /></a>
               </article>
