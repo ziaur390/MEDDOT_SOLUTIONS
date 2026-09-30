@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Native links work reliably in the current Sites runtime. */
 import Image from "next/image";
-import { ArrowUpRight, HeartPulse, Layers3, Sparkles, Check, CircleDot, Monitor, MessageSquareText, MapPin, Mail, ClipboardCheck } from "lucide-react";
+import { ArrowUpRight, HeartPulse, Layers3, Sparkles, Check, CircleDot, Monitor, MessageSquareText, ClipboardCheck, Mail, FileCheck2 } from "lucide-react";
 import { ProcessTabs } from "@/components/process-tabs";
 
 const pillars = [
@@ -33,30 +33,43 @@ export default function Home() {
       <section className="hero-section">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <div className="eyebrow"><span className="eyebrow-line" /> FOR THE PRACTICES MOVING CARE FORWARD</div>
-            <h1>Better operations.<br /><em>More room to care.</em></h1>
-            <p className="hero-lede">Meddot brings billing, revenue cycle support, and practical digital services together for independent healthcare practices.</p>
+            <div className="eyebrow"><span className="eyebrow-line" /> MEDICAL BILLING + PRACTICE GROWTH</div>
+            <h1>Medical billing that <em>moves your practice forward.</em></h1>
+            <p className="hero-lede">Medical billing, revenue cycle support, and digital services for independent practices and small medical groups. Tell us where the work is getting stuck.</p>
             <div className="hero-actions">
-              <a className="button button-teal" href="/contact">Request a consultation <ArrowUpRight size={17} /></a>
-              <a className="text-link" href="#services">Explore our services <ArrowUpRight size={16} /></a>
+              <a className="button button-teal" href="/contact#consultation-form">Talk about your practice <ArrowUpRight size={17} /></a>
+              <a className="text-link" href="#start-here">Find the right support <ArrowUpRight size={16} /></a>
             </div>
+            <p className="hero-reassurance">Start with a focused conversation about your workflow and goals.</p>
           </div>
           <div className="hero-visual">
             <Image src="/hero-clinic.png" alt="A receptionist at the front desk of a contemporary medical practice" fill priority sizes="(max-width: 900px) 100vw, 46vw" />
-            <div className="hero-visual-label"><span className="label-rule" /> Built around your practice</div>
+            <div className="hero-visual-label"><span className="label-rule" /> For independent practices &amp; small groups</div>
           </div>
         </div>
-        <div className="container hero-footer"><span>BETTER SYSTEMS. BETTER FOCUS.</span><span>SCROLL TO EXPLORE ↓</span></div>
+        <div className="container hero-footer"><span>REVENUE OPERATIONS · DIGITAL GROWTH</span><span>SCROLL TO EXPLORE ↓</span></div>
       </section>
 
-      <section className="trust-band" aria-label="About Meddot"><div className="container trust-band-inner"><div><MapPin size={20}/><p><strong>Focused on U.S. practices</strong><span>Sample location: New York, NY · to be confirmed</span></p></div><div><ClipboardCheck size={20}/><p><strong>Scope before promises</strong><span>Clear responsibilities and systems for every engagement</span></p></div><div><Mail size={20}/><p><strong>A direct way to connect</strong><span>Start with a consultation by email</span></p></div></div></section>
+      <section className="trust-band" aria-label="How we begin"><div className="container trust-band-inner"><div><HeartPulse size={20}/><p><strong>Built for smaller practices</strong><span>Support shaped around your team and workload</span></p></div><div><ClipboardCheck size={20}/><p><strong>Clear scope first</strong><span>Discuss responsibilities before work begins</span></p></div><div><Mail size={20}/><p><strong>Start with a conversation</strong><span>Tell us what you need help moving forward</span></p></div></div></section>
+
+      <section className="start-section section" id="start-here">
+        <div className="container start-grid">
+          <div className="start-intro"><p className="kicker">START WITH WHAT&apos;S ON YOUR DESK</p><h2>What needs attention <em>right now?</em></h2><p>Choose the issue closest to yours. We can work out the right scope together in a consultation.</p><a className="text-link" href="/contact#consultation-form">Tell us about your practice <ArrowUpRight size={16}/></a></div>
+          <div className="need-list">
+            <a href="/services/revenue-operations/medical-billing"><span>01</span><div><strong>Claims and billing workflow</strong><small>Submission, tracking, and day-to-day billing support</small></div><ArrowUpRight size={20}/></a>
+            <a href="/services/revenue-operations/ar-recovery"><span>02</span><div><strong>Aging or unresolved A/R</strong><small>Follow-up for claims that need a closer look</small></div><ArrowUpRight size={20}/></a>
+            <a href="/services/revenue-operations/credentialing"><span>03</span><div><strong>Provider enrollment</strong><small>Credentialing and payer participation support</small></div><ArrowUpRight size={20}/></a>
+            <a href="/services/digital-growth"><span>04</span><div><strong>Your digital front door</strong><small>Websites, search, and GoHighLevel workflows</small></div><ArrowUpRight size={20}/></a>
+          </div>
+        </div>
+      </section>
 
       <section className="services-section section" id="services">
         <div className="container">
-          <div className="section-intro"><div><p className="kicker">WHAT WE DO</p><h2>One partner for the work<br />behind better care.</h2></div><p>From the revenue cycle to your digital front door, we help independent practices build the support they need to grow.</p></div>
+          <div className="section-intro"><div><p className="kicker">WHAT WE DO</p><h2>Support across the parts<br />of a practice that connect.</h2></div><p>Begin with the service you need now. Billing and revenue operations are our core focus; digital services support the way patients find and reach you.</p></div>
           <div className="pillar-grid">
             {pillars.map(({ icon: Icon, title, description, href, link }) => (
-              <article className="pillar-card" key={title}>
+              <article className={`pillar-card ${title === "Healthcare AI" ? "pillar-card-future" : ""}`} key={title}>
                 <div className="pillar-top"><Icon size={25} strokeWidth={1.6} /></div>
                 <div><h3>{title}</h3><p>{description}</p></div>
                 <a href={href}>{link} <ArrowUpRight size={17} /></a>
@@ -98,7 +111,7 @@ export default function Home() {
 
       <section className="section fit-section" id="about"><div className="container fit-grid"><div><p className="kicker">WHO WE SERVE</p><h2>Built around independent practice life.</h2></div><div><p>We focus on physicians, practice managers, and small medical groups who need capable support without adding more complexity to their day.</p><ul><li><Check size={18} /> Independent practices</li><li><Check size={18} /> Small medical groups</li><li><Check size={18} /> Teams planning their next stage of growth</li></ul><a className="text-link" href="/about">Get to know Meddot <ArrowUpRight size={16} /></a></div></div></section>
 
-      <section className="closing-section"><div className="container closing-inner"><p className="kicker">Let’s connect</p><h2>Make more space for the work that matters.</h2><p>Tell us about your practice and what you want to improve. We can explore whether Meddot is the right fit.</p><a className="button button-teal" href="/contact">Request a consultation <ArrowUpRight size={17} /></a></div></section>
+      <section className="closing-section"><div className="container closing-inner"><p className="kicker">YOUR FIRST CONVERSATION</p><h2>Tell us what is slowing your team down.</h2><p>Share the issue, your practice type, and the support you are considering. We’ll use that context to discuss a practical scope and next steps.</p><div className="closing-steps"><span><FileCheck2 size={18}/> Describe the need</span><span><MessageSquareText size={18}/> Discuss the workflow</span><span><Check size={18}/> Agree on next steps</span></div><a className="button button-teal" href="/contact#consultation-form">Request a consultation <ArrowUpRight size={17} /></a></div></section>
     </main>
   );
 }

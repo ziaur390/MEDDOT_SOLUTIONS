@@ -337,6 +337,29 @@ a.service-card:hover{transform:translateY(-3px);box-shadow:0 20px 40px #071a420b
 .trust-band-inner p{display:grid;gap:3px;margin:0}
 .trust-band-inner strong{font-size:14px}
 .trust-band-inner span{font-size:12px;color:#4a6070;line-height:1.45}
+.hero-copy h1{font-size:clamp(48px,5.05vw,72px);max-width:760px;line-height:1.075}
+.hero-copy h1 em{display:inline;font-weight:700}
+.hero-reassurance{margin:20px 0 0;max-width:500px;font-size:13px;line-height:1.5;color:#68798a}
+.start-section{background:#fff}
+.start-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:10%;align-items:center}
+.start-intro h2{font-size:clamp(38px,4.1vw,58px);line-height:1.1;letter-spacing:-.045em;margin:18px 0}
+.start-intro h2 em{font-style:normal;color:#008f91}
+.start-intro>p:not(.kicker){font-size:17px;line-height:1.7;color:#536479;max-width:450px}
+.start-intro .text-link{margin-top:20px}
+.need-list{border-top:1px solid #cbdde3}
+.need-list a{display:grid;grid-template-columns:35px 1fr 22px;align-items:center;gap:18px;padding:24px 8px;border-bottom:1px solid #cbdde3;transition:background-color .2s,padding .2s}
+.need-list a:hover{background:#f1f7f8;padding-inline:17px}
+.need-list a>span{color:#008f91;font-size:12px;font-weight:800}
+.need-list strong{display:block;font-size:21px;line-height:1.2;letter-spacing:-.025em}
+.need-list small{display:block;color:#627486;font-size:14px;line-height:1.45;margin-top:5px}
+.need-list svg{color:#008f91}
+.pillar-card-future{background:#f1f7f8;border-color:#e3eced}
+.pillar-card-future .pillar-top:after{content:"IN DEVELOPMENT";font-size:10px;letter-spacing:.08em;color:#477278}
+.closing-steps{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:30px 0}
+.closing-steps span{display:flex;align-items:center;gap:8px;border:1px solid #d4e4e7;background:#fff;padding:11px 13px;font-size:12px;font-weight:700;color:#405369}
+.closing-steps svg{color:#008f91}
+@media(max-width:900px){.start-grid{grid-template-columns:1fr;gap:32px}.hero-copy h1{font-size:clamp(48px,8vw,70px)}}
+@media(max-width:640px){.hero-copy h1{font-size:clamp(43px,10.5vw,60px)}.hero-reassurance{font-size:12px}.need-list strong{font-size:18px}.need-list small{font-size:13px}.closing-steps{justify-content:flex-start}.closing-inner{text-align:left}.closing-inner .kicker{justify-content:flex-start}}
 .footer-presence{display:flex;align-items:flex-start;gap:10px;margin-top:24px;color:#e0edf4;font-size:14px}
 .footer-presence svg{color:#70d4d0;flex:none;margin-top:2px}
 .footer-presence span{display:grid;gap:3px}
